@@ -1,0 +1,8 @@
+package wasi:io
+
+interface processor {
+    use streams.{input-stream, output-stream, stream-error}
+
+    /// Read data from `src` and write data to `dst`. The nature of data written to `dst` is up to the implementation of the interface.
+    process: func(src: input-stream, dst: output-stream) -> result<tuple<u64, u64>, stream-error>
+}

@@ -1,0 +1,8 @@
+package wasi:io
+
+interface writer {
+    use streams.{input-stream, stream-error}
+
+    /// Write data from `src` into the writer
+    write: func(src: input-stream) -> result<u64, stream-error>
+}

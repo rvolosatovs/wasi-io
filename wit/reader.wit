@@ -1,0 +1,8 @@
+package wasi:io
+
+interface reader {
+    use streams.{output-stream, stream-error}
+
+    /// Read data into `dst` from the reader
+    read: func(dst: output-stream) -> result<u64, stream-error>
+}
